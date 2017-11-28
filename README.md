@@ -7,9 +7,9 @@ npm run nyc
 ```
 
 ```shell
-npm i mochawesome
+npm run mochawesome
 ```
 
 ```shell
-npm i cover
+npm run cover
 ```
