@@ -6,8 +6,9 @@
   "scripts": {
     "nyc": "nyc ava -vs && nyc report --reporter=html",
     "mochawesome": "node ./node_modules/mocha/bin/mocha --compilers js:babel-core/register --reporter mochawesome",
-    "cover": "node ./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- --compilers js:babel-core/register --reporter mochawesome -R spec --timeout 5000 --recursive",
-    "test": "node ./node_modules/mocha/bin/mocha --compilers js:babel-core/register"
+    "coverage": "node ./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- --compilers js:babel-core/register --reporter mochawesome -R spec --timeout 5000 --recursive",
+    "test": "node ./node_modules/mocha/bin/mocha --compilers js:babel-core/register",
+    "coveralls": "npm run-script coverage && node ./node_modules/coveralls/bin/coveralls.js < coverage/lcov.info"
   },
   "ava": {
     "files": [
@@ -50,6 +51,7 @@
     "nyc": "^11.7.1"
   },
   "dependencies": {
-    "countup": "^1.8.2"
+    "countup": "^1.8.2",
+    "coveralls": "^3.0.0"
   }
 }
